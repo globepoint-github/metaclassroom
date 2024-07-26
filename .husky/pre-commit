@@ -1,0 +1,2 @@
+cd front_dev
+npm run lint-staged
