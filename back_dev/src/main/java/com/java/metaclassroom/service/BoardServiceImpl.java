@@ -54,6 +54,7 @@ public class BoardServiceImpl implements BoardService{
                 }else {
 
                     b = dto.toEntity(dto.isOpen(),config);
+
                 }
 
 
