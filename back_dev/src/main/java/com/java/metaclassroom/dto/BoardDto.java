@@ -22,13 +22,6 @@ public record BoardDto (
 
 ) {
 
-    public BoardConfig toEntity(){
-        return BoardConfig.builder()
-                .isViewUse(AnswerYN.Y)
-                .boardType(boardType)
-                .build();
-    }
-
     public Board toEntity(AnswerYN isOpen, BoardConfig config){
         return Board.builder()
                 .classify(classify)
