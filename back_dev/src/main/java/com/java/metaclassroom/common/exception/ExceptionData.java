@@ -17,6 +17,8 @@ public enum ExceptionData {
 
     // Custom Exception
     EMPTY_BOARD_TYPE(HttpStatus.BAD_REQUEST, "CE0001", "게시판 분류를 입력 해주세요."),
+    NOT_FOUND_BOARD(HttpStatus.NOT_FOUND, "CE0001", "게시판을 찾을 수 없습니다."),
+
     ;
     private final HttpStatus status;
     private final String code;

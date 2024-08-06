@@ -2,6 +2,7 @@ package com.java.metaclassroom.dto;
 
 import com.java.metaclassroom.entity.board.Board;
 import com.java.metaclassroom.entity.board.BoardConfig;
+import com.java.metaclassroom.enums.AnswerType;
 import com.java.metaclassroom.enums.AnswerYN;
 import com.java.metaclassroom.enums.BoardType;
 
@@ -18,7 +19,9 @@ public record BoardDto (
         String thumbnail,
         AnswerYN isOpen,
         AnswerYN isAnswer,
-        AnswerYN isDelete
+        AnswerType answerType,
+        AnswerYN isDelete,
+        AnswerYN isTopExpo
 
 ) {
 
@@ -30,8 +33,10 @@ public record BoardDto (
                 .answer(answer)
                 .thumbnail(thumbnail)
                 .isOpen(isOpen)
-                .isAnswer(AnswerYN.N)
+                .answerType(AnswerType.W)
                 .isDelete(AnswerYN.N)
+                .isTopExpo(isTopExpo)
+                .boardConfig(config)
                 .build();
     }
 

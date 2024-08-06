@@ -29,9 +29,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
 
+	//lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
@@ -52,10 +52,40 @@ dependencies {
 	runtimeOnly 'com.h2database:h2:2.2.224'
 
 
+	//querydsl
+	//Querydsl 추가
+	implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+	annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
+	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
+
+
+// Qclass 에러로 아래 코드 추가 했습니다 오류시 주석 처리 후 돌려주세요 ~
+
+//querydsl 설정
+def generated = 'src/main/generated'
+
+//querydsl Qclass 파일 생성 위치를 지정
+tasks.withType(JavaCompile){
+	options.generatedSourceOutputDirectory = file(generated)
+}
+
+// java source set 에 querydsl Qclass 위치 추가
+sourceSets {
+	main.java.srcDirs += "$projectDir/build/generated"
+}
+
+// gralde clean 시에 지정한 Qclass 디렉토리 삭제
+clean{
+	delete file(generated)
+}
+
+
 
 tasks.named('test') {
 	useJUnitPlatform()

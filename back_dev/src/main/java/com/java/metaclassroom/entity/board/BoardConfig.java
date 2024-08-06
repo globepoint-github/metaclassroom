@@ -18,6 +18,7 @@ public class BoardConfig {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "board_config_id")
     private Long boardConfigId; // 고유번호
+    @Enumerated(EnumType.STRING)
     private BoardType boardType; // 게시판 분류 > enum 에서 string 으로
     @Enumerated(EnumType.STRING)
     private AnswerYN isViewUse; // 조회수 사용여부
