@@ -1,12 +1,11 @@
 package com.java.metaclassroom.dto;
 
 import com.java.metaclassroom.entity.board.BoardConfig;
-import com.java.metaclassroom.enums.AnswerYN;
 import com.java.metaclassroom.enums.BoardType;
 
 public record BoardConfigDto(
         BoardType boardType,
-        AnswerYN isViewUse,
+        boolean isViewUse,
         int topExpoCount
 
 ) {

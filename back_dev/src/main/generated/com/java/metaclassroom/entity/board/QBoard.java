@@ -36,11 +36,11 @@ public class QBoard extends EntityPathBase<Board> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final EnumPath<com.java.metaclassroom.enums.AnswerYN> isDelete = createEnum("isDelete", com.java.metaclassroom.enums.AnswerYN.class);
+    public final BooleanPath isDelete = createBoolean("isDelete");
 
-    public final EnumPath<com.java.metaclassroom.enums.AnswerYN> isOpen = createEnum("isOpen", com.java.metaclassroom.enums.AnswerYN.class);
+    public final BooleanPath isOpen = createBoolean("isOpen");
 
-    public final EnumPath<com.java.metaclassroom.enums.AnswerYN> isTopExpo = createEnum("isTopExpo", com.java.metaclassroom.enums.AnswerYN.class);
+    public final BooleanPath isTopExpo = createBoolean("isTopExpo");
 
     public final StringPath thumbnail = createString("thumbnail");
 

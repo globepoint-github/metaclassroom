@@ -1,7 +1,6 @@
 package com.java.metaclassroom.entity.board;
 
 import com.java.metaclassroom.common.BaseEntity;
-import com.java.metaclassroom.enums.AnswerYN;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -40,7 +39,7 @@ public class Comment extends BaseEntity {
 
   private String userName;
   @Enumerated(EnumType.STRING)
-  private AnswerYN isDelete; // 삭제 여부
+  private Boolean isDelete; // 삭제 여부
 
   @ManyToOne
   @JoinColumn(name = "board_id")

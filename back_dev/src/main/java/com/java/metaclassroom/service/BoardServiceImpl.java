@@ -12,7 +12,6 @@ import com.java.metaclassroom.entity.board.BoardConfigRepository;
 import com.java.metaclassroom.entity.board.BoardRepository;
 import com.java.metaclassroom.entity.board.Comment;
 import com.java.metaclassroom.entity.board.CommentRepository;
-import com.java.metaclassroom.enums.AnswerYN;
 import java.awt.print.Pageable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,18 +44,18 @@ public class BoardServiceImpl implements BoardService{
         if(config != null){
             // 게시판 설정이 있는 경우
           if(dto.isOpen() == null) {
-            b = dto.toEntity(AnswerYN.Y, config);
+            b = dto.toEntity(true, config);
           }else {
             b = dto.toEntity(dto.isOpen(), config);
           }
 
         }else {
             // 게시판 설정이 없는 경우
-                BoardConfigDto configDto = new BoardConfigDto(dto.boardType(), AnswerYN.Y,100);
+                BoardConfigDto configDto = new BoardConfigDto(dto.boardType(), true,100);
                 config = configRepository.save(configDto.toEntity());
 
               if(dto.isOpen() == null) {
-                b = dto.toEntity(AnswerYN.Y, config);
+                b = dto.toEntity(true, config);
               }else {
                 b = dto.toEntity(dto.isOpen(), config);
               }

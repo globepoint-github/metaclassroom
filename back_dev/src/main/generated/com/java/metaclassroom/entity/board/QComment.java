@@ -33,7 +33,7 @@ public class QComment extends EntityPathBase<Comment> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final EnumPath<com.java.metaclassroom.enums.AnswerYN> isDelete = createEnum("isDelete", com.java.metaclassroom.enums.AnswerYN.class);
+    public final BooleanPath isDelete = createBoolean("isDelete");
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modifiedDate = _super.modifiedDate;

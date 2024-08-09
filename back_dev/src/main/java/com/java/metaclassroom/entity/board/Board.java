@@ -2,7 +2,6 @@ package com.java.metaclassroom.entity.board;
 
 import com.java.metaclassroom.dto.BoardDto;
 import com.java.metaclassroom.enums.AnswerType;
-import com.java.metaclassroom.enums.AnswerYN;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
@@ -30,18 +29,15 @@ public class Board {
     @Column(columnDefinition = "LONGTEXT")
     private String answer; // 답변...
     private String thumbnail; //썸네일
-    @Enumerated(EnumType.STRING)
-    private AnswerYN isOpen; // 공개여부
+    private Boolean isOpen; // 공개여부
 
     @Enumerated(EnumType.STRING)
     private AnswerType answerType; // 답변 상태
 
 
-    @Enumerated(EnumType.STRING)
-    private AnswerYN isDelete; //삭제여부
+    private Boolean isDelete; //삭제여부
 
-    @Enumerated(EnumType.STRING)
-    private AnswerYN isTopExpo; //상단 여부
+    private Boolean isTopExpo; //상단 여부
 
     @ManyToOne
     @JoinColumn(name = "board_config_id")

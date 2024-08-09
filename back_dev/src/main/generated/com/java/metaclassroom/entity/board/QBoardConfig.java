@@ -23,7 +23,7 @@ public class QBoardConfig extends EntityPathBase<BoardConfig> {
 
     public final EnumPath<com.java.metaclassroom.enums.BoardType> boardType = createEnum("boardType", com.java.metaclassroom.enums.BoardType.class);
 
-    public final EnumPath<com.java.metaclassroom.enums.AnswerYN> isViewUse = createEnum("isViewUse", com.java.metaclassroom.enums.AnswerYN.class);
+    public final BooleanPath isViewUse = createBoolean("isViewUse");
 
     public final NumberPath<Integer> topExpoCount = createNumber("topExpoCount", Integer.class);
 

@@ -3,7 +3,6 @@ package com.java.metaclassroom.dto;
 import com.java.metaclassroom.entity.board.Board;
 import com.java.metaclassroom.entity.board.Comment;
 import com.java.metaclassroom.enums.AnswerType;
-import com.java.metaclassroom.enums.AnswerYN;
 
 public record CommentDto(
     Long boardId,
@@ -15,7 +14,7 @@ public record CommentDto(
 
   public Comment toEntity(String userName,Board board){
     return Comment.builder()
-        .isDelete(AnswerYN.N)
+        .isDelete(false)
         .answer(answer)
         .userName(userName)
         .board(board)

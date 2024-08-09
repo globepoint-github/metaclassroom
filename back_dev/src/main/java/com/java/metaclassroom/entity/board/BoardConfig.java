@@ -1,7 +1,6 @@
 package com.java.metaclassroom.entity.board;
 
 import com.java.metaclassroom.dto.BoardConfigDto;
-import com.java.metaclassroom.enums.AnswerYN;
 import com.java.metaclassroom.enums.BoardType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,8 +19,7 @@ public class BoardConfig {
     private Long boardConfigId; // 고유번호
     @Enumerated(EnumType.STRING)
     private BoardType boardType; // 게시판 분류 > enum 에서 string 으로
-    @Enumerated(EnumType.STRING)
-    private AnswerYN isViewUse; // 조회수 사용여부
+    private boolean isViewUse; // 조회수 사용여부
     private int topExpoCount; // 상단글 개수 여부
 
 
