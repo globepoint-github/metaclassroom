@@ -31,7 +31,7 @@ logging:
   level:
     org.hibernate.SQL: DEBUG
     org.hibernate.type: trace
-    com.java.metaclassroom : DEBUG
+    com.metaclassroom : DEBUG
 #swagger api 문서
 springdoc:
   swagger-ui:
