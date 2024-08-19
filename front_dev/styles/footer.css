@@ -1,0 +1,41 @@
+footer {
+    background: #2f333a;
+    color: var(--white);
+    padding: 60px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .logo {
+    font-size: var(--size20);
+    font-weight: 600;
+}
+
+footer .add {
+    font-size: var(--size18);
+    margin: 8px 0 20px;
+}
+
+footer .info-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+footer .info-list>li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: var(--size18);
+}
+
+footer .info-list>li img {
+    width: 20px;
+}
+
+footer .copy {
+    color: #767676;
+    font-size: var(--size20);
+    margin-top: 40px;
+}
